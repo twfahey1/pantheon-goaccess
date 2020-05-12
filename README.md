@@ -1,10 +1,10 @@
-# GoAccess VM
+# Pantheon GoAccess
 
 ## Overview
-- Preconfigured w/ GoAccess - configuration is in `/usr/local/etc/goaccess`
+This is intended to provide a Docker image for analyzing Pantheon site logs.
 
 ## Setup
-- Make sure you have Docker setup
+- Make sure you have Docker setup - 
 ### Building from the Dockerfile
 - From the directory you have cloned this repo, run `docker build .`. The output should give you the hash for the container, e.g.:
 ```
