@@ -19,4 +19,5 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer require pantheon-systems/terminus:2.3
 RUN mkdir ~/.terminus
 RUN mkdir ~/.terminus/plugins
-RUN git clone https://github.com/jfussion/terminus-get-logs.git ~/.terminus/plugins/terminus-get-logs
+RUN git clone https://github.com/twfahey1/terminus-get-logs ~/.terminus/plugins/terminus-get-logs
+RUN echo "PATH=$PATH:/vendor/bin" >> ~/.bashrc
