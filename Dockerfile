@@ -20,4 +20,5 @@ RUN composer require pantheon-systems/terminus:2.3
 RUN mkdir ~/.terminus
 RUN mkdir ~/.terminus/plugins
 RUN git clone https://github.com/twfahey1/terminus-get-logs ~/.terminus/plugins/terminus-get-logs
+RUN git clone https://github.com/pantheon-systems/terminus-rsync-plugin ~/.terminus/plugins/terminus-rsync-plugin
 RUN echo "PATH=$PATH:/vendor/bin" >> ~/.bashrc

@@ -49,4 +49,7 @@ The logs should be inside a folder with site name, environment, and then IP of s
 ```
 goaccess -p /usr/local/etc/goaccess/goaccess.conf nginx-access.log
 ```
-
+To analyze all logs at once:
+```
+goaccess -p /usr/local/etc/goaccess/goaccess.conf */nginx-access.log
+```
