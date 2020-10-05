@@ -39,19 +39,25 @@ root@0dc448cf71d1:/#
 ```
 From here on out, you can run all your commands from within the container.
 ## Usage
-- You can theoretically copy over your log files you downloaded previously with `docker cp`. If you don't want to copy over your log files, this container includes terminus and the `get-logs` and `rsync` plugins to facilitate getting the logs directly to the container with analysis. 
+- You can theoretically copy over your log files you downloaded previously with `docker cp`. Using the hash of your container, you can run `docker cp [SOURCE FILES/FOLDER] [CONTAINER HASH]:[DESTINATION]` to move a file from your local system to the container. An example of this, if you wanted to copy your local ssh key over to the container, it would look something like this:
+```
+docker cp ~/.ssh/id_rsa 1f79887df0dfccd67515:/root/.ssh/id_rsa
+```
+
+
+- If you don't want to copy over your log files, this container includes terminus and the `get-logs` and `rsync` plugins to facilitate getting the logs directly to the container with analysis. 
 
 The first step is to authenticate with terminus and a machine token (Reference to this process [here](https://pantheon.io/docs/machine-tokens)):
 ```
 terminus auth:login --machine-token=[MACHINE_TOKEN]
 ```
-- OPTIONAL: Setup an ssh-key and add it to your account via terminus:
+- OPTIONAL: Setup an ssh-key and add it to your account via terminus. You could copy it from your local machine with the `docker cp` command example listed above, or generate a new one with `ssh-keygen`. From inside the container, you can create the key file and add it with terminus:
 ```
 ssh-keygen
 (follow the prompts and generate, id_rsa.pub is default)
 terminus ssh:add ~/.ssh/id_rsa.pub
 ```
-If you don't do this step, you'll need to use the password for your account when accessing the logs via the terminus get-logs or rsync plugin.
+If you don't add ssh key from the Docker container, you'll need to use the password for your account when accessing the logs via the terminus get-logs or rsync plugin.
 
 - Grab the logs via the terminus-get-logs plugin:
 ```
