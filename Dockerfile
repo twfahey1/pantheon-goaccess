@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 # Set up core utilities.
 RUN apt-get update
-RUN apt-get install wget build-essential libncursesw5-dev php curl git zip unzip php-xml vim-tiny -y
+RUN apt-get install wget build-essential libncursesw5-dev php curl git zip unzip php-xml vim-tiny dnsutils -y
 # Set up GoAccess
 RUN wget https://tar.goaccess.io/goaccess-1.3.tar.gz
 RUN tar -xzvf goaccess-1.3.tar.gz
