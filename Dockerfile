@@ -16,7 +16,7 @@ RUN echo 'log-format %^ - %^ [%d:%t %^]  "%r" %s %b "%R" "%u" %T ~h{," }' >> /us
 # Set up Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 # Set up Terminus
-RUN composer require pantheon-systems/terminus:2.3
+RUN composer require pantheon-systems/terminus:2.5.0
 RUN mkdir ~/.terminus
 RUN mkdir ~/.terminus/plugins
 RUN git clone https://github.com/twfahey1/terminus-get-logs ~/.terminus/plugins/terminus-get-logs
